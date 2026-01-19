@@ -64,16 +64,24 @@
             </p>
 
             <!-- Profiles list (JS renders buttons here) -->
-            <div
-              id="profilesList"
-              class="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4"
-            ></div>
+            <div id="profilesList" class="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4"></div>
+
+            <!-- Add profile button (below cards, centered) -->
+            <div id="profilesActions" class="mt-10 hidden justify-center">
+              <button
+                id="addProfileBtn"
+                type="button"
+                class="inline-flex h-12 items-center justify-center rounded-md border border-white/25 bg-black/40 px-6 text-sm font-semibold text-white hover:border-white/50"
+              >
+                + Add Profile
+              </button>
+            </div>
 
             <!-- Create profile form (shown when no profiles) -->
             <div class="mt-10 flex justify-center">
               <form
                 id="createProfileForm"
-                class="hidden w-full max-w-md rounded-xl border border-white/10 bg-black/70 p-6 shadow-2xl backdrop-blur"
+                class="hidden w-full max-w-md rounded-xl border border-white/10 bg-black/70 p-6 shadow-2xl backdrop-blur sm:p-8"
               >
                 <h2 class="text-lg font-bold">Create profile</h2>
                 <p class="mt-1 text-sm text-white/70">Choose a name for your profile.</p>
