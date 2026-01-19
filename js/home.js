@@ -94,6 +94,11 @@ function renderHero(item) {
   heroMeta.textContent = `${item.metadata.category} • ${item.metadata.year}`;
   heroTitle.textContent = item.title;
   heroDesc.textContent = item.description;
+  document.querySelector("section.relative.pt-20").style.backgroundImage =
+  `linear-gradient(to bottom, rgba(0,0,0,.75), rgba(0,0,0,.95)), url('${item.image || ""}')`;
+    document.querySelector("section.relative.pt-20").style.backgroundSize = "cover";
+    document.querySelector("section.relative.pt-20").style.backgroundPosition = "center";
+
 
   moreInfoBtn.onclick = () => openModal(item);
 }
@@ -107,25 +112,42 @@ function renderRows(items) {
     const section = document.createElement("section");
 
     section.innerHTML = `
-      <h3 class="text-lg font-bold">${category}</h3>
-      <div class="mt-3 flex gap-3 overflow-x-auto pb-2">
+      <div class="flex items-center justify-between">
+        <h3 class="text-lg font-bold">${category}</h3>
+      </div>
+
+      <div class="mt-3 flex gap-3 overflow-x-auto pb-3 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         ${list
           .map((item) => {
             const fav = isFavorite(item.id);
+            const img = item.image
+
             return `
               <button
                 data-id="${item.id}"
-                class="group relative h-32 min-w-[200px] rounded-md border border-white/10 bg-white/5 p-4 text-left hover:border-white/30 hover:bg-white/10 transition"
                 type="button"
+                class="group relative h-[140px] min-w-[240px] overflow-hidden rounded-md border border-white/10 bg-white/5 text-left transition hover:z-10 hover:scale-[1.04] hover:border-white/30"
               >
-                <div class="text-sm font-semibold">${item.title}</div>
-                <div class="mt-1 text-xs text-white/60">${item.metadata.year}</div>
-                <div class="mt-3 text-xs text-white/70 line-clamp-3">${item.description}</div>
+                <img
+                  src="${img}"
+                  alt="${item.title}"
+                  class="h-full w-full object-cover opacity-90 transition group-hover:opacity-100"
+                  loading="lazy"
+                />
 
-                <div class="absolute right-3 top-3 text-xs ${
-                  fav ? "text-red-400" : "text-white/40"
-                }">
-                  ${fav ? "♥" : "♡"}
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+
+                <div class="absolute bottom-0 left-0 right-0 p-3">
+                  <div class="flex items-start justify-between gap-2">
+                    <div>
+                      <div class="text-sm font-semibold">${item.title}</div>
+                      <div class="text-xs text-white/70">${item.metadata.year}</div>
+                    </div>
+
+                    <div class="text-sm ${fav ? "text-red-400" : "text-white/60"}">
+                      ${fav ? "♥" : "♡"}
+                    </div>
+                  </div>
                 </div>
               </button>
             `;
@@ -146,6 +168,8 @@ function renderRows(items) {
   });
 }
 
+
+   
 function applySearch() {
   const q = (searchInput?.value || "").trim().toLowerCase();
   if (!q) {
