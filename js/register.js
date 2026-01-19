@@ -52,3 +52,24 @@ setSession(email)
 window.location.href = "../pages/profiles.html"
 
 }) 
+
+const passwordEl = document.getElementById("password");
+const confirmEl = document.getElementById("confirm");
+const togglePasswordBtn = document.getElementById("togglePasswordBtn");
+const toggleConfirmBtn = document.getElementById("toggleConfirmBtn");
+
+if (togglePasswordBtn && passwordEl) {
+  togglePasswordBtn.addEventListener("click", () => {
+    const isHidden = passwordEl.type === "password";
+    passwordEl.type = isHidden ? "text" : "password";
+    togglePasswordBtn.textContent = isHidden ? "Hide" : "Show";
+  });
+}
+
+if (toggleConfirmBtn && confirmEl) {
+  toggleConfirmBtn.addEventListener("click", () => {
+    const isHidden = confirmEl.type === "password";
+    confirmEl.type = isHidden ? "text" : "password";
+    toggleConfirmBtn.textContent = isHidden ? "Hide" : "Show";
+  });
+}

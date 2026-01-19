@@ -5,6 +5,16 @@ const emailInput = document.getElementById("email");
 const passwordInput = document.getElementById("password");
 const errorEl = document.getElementById("loginError");
 
+const togglePasswordBtn = document.getElementById("togglePasswordBtn");
+
+if (togglePasswordBtn && passwordInput) {
+  togglePasswordBtn.addEventListener("click", () => {
+    const isHidden = passwordInput.type === "password";
+    passwordInput.type = isHidden ? "text" : "password";
+    togglePasswordBtn.textContent = isHidden ? "Hide" : "Show";
+  });
+}
+
 function showError(message) {
   errorEl.textContent = message;
   errorEl.classList.remove("hidden");
