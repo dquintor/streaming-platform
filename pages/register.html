@@ -76,34 +76,43 @@
                 />
               </div>
 
-              <div>
-                <label for="password" class="block text-sm font-medium text-white/80">Password</label>
-                <input
-                  id="password"
-                  type="password"
-                  autocomplete="new-password"
-                  placeholder="Create a password"
-                  class="mt-2 h-12 w-full rounded-md border border-white/20 bg-black/40 px-4 text-sm text-white placeholder:text-white/50 outline-none focus:border-white/50"
-                  minlength="8"
-                  required
-                />
-                <p class="mt-2 text-xs text-white/55">Use 8+ characters.</p>
-              </div>
+              <div class="relative">
+              <input
+                id="password"
+                type="password"
+                autocomplete="new-password"
+                placeholder="Create a password"
+                class="mt-2 h-12 w-full rounded-md border border-white/20 bg-black/40 px-4 pr-20 text-sm text-white placeholder:text-white/50 outline-none focus:border-white/50"
+                minlength="8"
+                required
+              />
+              <button
+                id="togglePasswordBtn"
+                type="button"
+                class="absolute right-3 top-1/2 -translate-y-1/2 text-sm font-semibold text-white/70 hover:text-white"
+              >
+                Show
+              </button>
+            </div>
 
-              <div>
-                <label for="confirm" class="block text-sm font-medium text-white/80">
-                  Confirm password
-                </label>
-                <input
-                  id="confirm"
-                  type="password"
-                  autocomplete="new-password"
-                  placeholder="Re-enter your password"
-                  class="mt-2 h-12 w-full rounded-md border border-white/20 bg-black/40 px-4 text-sm text-white placeholder:text-white/50 outline-none focus:border-white/50"
-                  minlength="8"
-                  required
-                />
-              </div>
+              <div class="relative">
+              <input
+                id="confirm"
+                type="password"
+                autocomplete="new-password"
+                placeholder="Re-enter your password"
+                class="mt-2 h-12 w-full rounded-md border border-white/20 bg-black/40 px-4 pr-20 text-sm text-white placeholder:text-white/50 outline-none focus:border-white/50"
+                minlength="8"
+                required
+              />
+              <button
+                id="toggleConfirmBtn"
+                type="button"
+                class="absolute right-3 top-1/2 -translate-y-1/2 text-sm font-semibold text-white/70 hover:text-white"
+              >
+                Show
+              </button>
+            </div>
 
               <button
                 type="submit"

@@ -71,15 +71,25 @@
                   <label for="password" class="block text-sm font-medium text-white/80">Password</label>
                   <a href="#" class="text-sm text-white/70 underline hover:text-white/90">Forgot password?</a>
                 </div>
-                <input
-                  id="password"
-                  type="password"
-                  autocomplete="current-password"
-                  placeholder="Password"
-                  class="mt-2 h-12 w-full rounded-md border border-white/20 bg-black/40 px-4 text-sm text-white placeholder:text-white/50 outline-none focus:border-white/50"
-                  required
-                />
-              </div>
+              <div class="relative">
+              <input
+                id="password"
+                type="password"
+                autocomplete="current-password"
+                placeholder="Password"
+                class="mt-2 h-12 w-full rounded-md border border-white/20 bg-black/40 px-4 pr-20 text-sm text-white placeholder:text-white/50 outline-none focus:border-white/50"
+                required
+              />
+
+              <button
+                id="togglePasswordBtn"
+                type="button"
+                class="absolute right-3 top-1/2 -translate-y-1/2 text-sm font-semibold text-white/70 hover:text-white"
+              >
+                Show
+              </button>
+            </div>
+
 
               <label class="flex items-center gap-3 pt-1 text-sm text-white/75">
                 <input
