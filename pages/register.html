@@ -57,7 +57,13 @@
               Enter your email and choose a password to get started.
             </p>
 
-            <form class="mt-6 space-y-4">
+            <div
+              id="registerError"
+              class="hidden mt-4 rounded-md border border-red-500/30 bg-red-600/15 p-3 text-sm text-red-200"
+              role="alert"
+            ></div>
+
+            <form id="registerForm" class="mt-6 space-y-4">
               <div>
                 <label for="email" class="block text-sm font-medium text-white/80">Email</label>
                 <input
@@ -108,7 +114,7 @@
 
               <p class="text-center text-sm text-white/70">
                 Already have an account?
-                <a href="/pages/login.html" class="font-semibold text-white underline hover:text-white/90">
+                <a href="./login.html" class="font-semibold text-white underline hover:text-white/90">
                   Sign in
                 </a>
               </p>
@@ -127,5 +133,6 @@
         <div class="h-1 bg-gradient-to-r from-fuchsia-500 via-red-600 to-orange-400"></div>
       </div>
     </section>
+    <script type="module" src="../js/register.js"></script>
   </body>
 </html>
