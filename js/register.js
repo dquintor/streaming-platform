@@ -3,7 +3,7 @@ import { seedCatalogIfEmpty, createUser, setSession, getSession, getSelectedProf
 seedCatalogIfEmpty()
 
 const session = getSession()
-if (sesion){
+if (session){
     const profileId = getSelectedProfileId()
     window.location.href = profileId ? "../pages/home.html" : "../pages/profiles.html"
 }
@@ -36,7 +36,7 @@ form.addEventListener("submit", (event) => {
     const email = emailInput.value.trim()
     const password = passwordInput.value
     const confirm = confirmInput.value
-})
+
 
 if (!email || !password || !confirm) return showError("All fields are required")
 if (!email.includes("@")) return showError ("Please enter a valid email")
@@ -50,3 +50,5 @@ if (!result.ok) return showError(result.message)
 setSession(email)
 
 window.location.href = "../pages/profiles.html"
+
+}) 
