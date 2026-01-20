@@ -124,9 +124,7 @@ cd streaming-platform
 
 ### Option 2: Run on Github Pages
 
-The project is deployed using GitHub Pages and can be accessed here:
-
-[Live Demo: ](https://github.com/dquintor/streaming-platform)
+The project is deployed using GitHub Pages and can be accessed here: [Live Demo ](https://dquintor.github.io/streaming-platform/)
 
 
 ---
