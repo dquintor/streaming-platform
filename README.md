@@ -139,9 +139,9 @@ The project is deployed using GitHub Pages and can be accessed here: [Live Demo 
 ## Branching & Commit Strategy
 
 ### Branching
-- `main` → stable version  
+- `main` → stable version
+- `develop` → development branch
 - `feature/*` → new features  
-- `fix/*` → bug fixes and small corrections  
 
 ### Commit Convention
 This project follows **Conventional Commits**:
