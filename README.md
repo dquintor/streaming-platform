@@ -99,14 +99,15 @@ All data is handled on the client side, making this project ideal for practicing
 ### localStorage
 | Key | Purpose |
 |---|---|
-| `users` | Stores all registered users |
+| `app_users` | Stores all registered users |
 | `currentUser` | Tracks the logged-in user |
-| `catalog` | Stores the movie catalog |
+| `app_catalog` | Stores the movie catalog |
 
 ### sessionStorage
 | Key | Purpose |
 |---|---|
-| `activeProfile` | Stores the currently selected profile |
+| `app_selectedProfile` | Stores the currently selected profile |
+| `app_session` | Tracks the logged-in user |
 
 ---
 
