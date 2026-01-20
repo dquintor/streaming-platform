@@ -100,7 +100,6 @@ All data is handled on the client side, making this project ideal for practicing
 | Key | Purpose |
 |---|---|
 | `app_users` | Stores all registered users |
-| `currentUser` | Tracks the logged-in user |
 | `app_catalog` | Stores the movie catalog |
 
 ### sessionStorage
