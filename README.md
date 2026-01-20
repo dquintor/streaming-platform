@@ -29,7 +29,7 @@ All data is handled on the client side, making this project ideal for practicing
 ### 2. Register
 - Registration form to create a new account  
 - User inputs:
-  - Name / Email  
+  - Email  
   - Password  
 - Password validation:
   - Minimum **8 characters**
@@ -58,31 +58,38 @@ All data is handled on the client side, making this project ideal for practicing
 ### User
 ```js
 {
-  id: string,
-  name: string,
-  email: string,
-  password: string,
-  profiles: []
+  email: string,                     // User login email
+  password: string,                  // User password
+  profiles: Profile[],               // Profiles linked to the account
+  favorites: {                       // Favorites per profile
+    [profileId: string]: string[]    // Array of catalog item IDs
+  }
 }
 ```
 
 ### Profile
 ```js
 {
-  id: string,
-  name: string,
-  avatar: string
+  id: string,                // Unique profile identifier
+  name: string,              // Profile display name
+  pin: string                // Optional security PIN
 }
+
 ```
 
 ### Catalog Item
 ```js
 {
-  id: string,
-  title: string,
-  image: string,
-  category: string
+  id: string,                // Unique catalog identifier
+  title: string,             // Movie or series title
+  description: string,       // Short description
+  image: string,             // Poster image path or URL
+  metadata: {
+    year: number,            // Release year
+    category: string         // Genre or category
+  }
 }
+
 ```
 
 ---
