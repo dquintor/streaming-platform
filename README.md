@@ -164,5 +164,5 @@ style: improve home layout
 ## Author Information
 
 **Daniela Quinto Ríos**  
-Software Developer in training
-Project created for learning and portfolio purposes.
+Software Developer
+- Project created for learning and portfolio purposes.
